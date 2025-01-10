@@ -43,8 +43,23 @@ class _VillagersScreenState extends State<VillagersScreen> {
                           context.read<GetVillagersCubit>().loggedInVillager,
                     ),
                   ),
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
+                      child: Text(
+                        TextConstants.otherVillagers,
+                        style: TextStyle(
+                          color: ColorConstants.textSecondary(context),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: -0.08,
+                        ),
+                      ),
+                    ),
+                  ),
                   if (state.villagers.isEmpty)
                     SliverFillRemaining(
+                      hasScrollBody: false,
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,

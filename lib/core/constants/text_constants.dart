@@ -28,6 +28,7 @@ class TextConstants {
   // Villagers Screen
   static const String noVillagers = "No other villagers in your village yet";
   static const String villagerBalance = "Balance: ₹";
+  static const String otherVillagers = "Villagers";
 
   // Self Profile Screen
   static const String selfProfile = "My Profile";
