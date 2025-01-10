@@ -8,6 +8,7 @@ class VillagePayApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => LoginCheckerCubit()),
+        BlocProvider(create: (context) => LoginCubit()),
       ],
       child: CupertinoApp(
         debugShowCheckedModeBanner: false,

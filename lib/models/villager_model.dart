@@ -3,8 +3,11 @@ class VillagerModel {
   final String name;
   final double balanceInRs;
 
-  VillagerModel(
-      {required this.id, required this.name, required this.balanceInRs});
+  VillagerModel({
+    required this.id,
+    required this.name,
+    required this.balanceInRs,
+  });
 
   factory VillagerModel.fromJson(Map<String, dynamic> json) {
     return VillagerModel(
