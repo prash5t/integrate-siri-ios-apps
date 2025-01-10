@@ -44,11 +44,11 @@ class _LoginScreenState extends State<LoginScreen> {
           showCupertinoDialog(
             context: context,
             builder: (context) => CupertinoAlertDialog(
-              title: const Text('Error'),
+              title: Text(TextConstants.error),
               content: Text(state.errorMessage),
               actions: [
                 CupertinoDialogAction(
-                  child: const Text('OK'),
+                  child: Text(TextConstants.ok),
                   onPressed: () => Navigator.pop(context),
                 ),
               ],
@@ -59,8 +59,14 @@ class _LoginScreenState extends State<LoginScreen> {
       child: BlocBuilder<LoginCubit, LoginState>(
         builder: (context, state) {
           return CupertinoPageScaffold(
-            navigationBar: const CupertinoNavigationBar(
-              middle: Text(TextConstants.login),
+            backgroundColor: ColorConstants.backgroundColor(context),
+            navigationBar: CupertinoNavigationBar(
+              middle: Text(
+                TextConstants.login,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+              backgroundColor:
+                  ColorConstants.surfaceColor(context).withOpacity(0.8),
             ),
             child: SafeArea(
               child: Form(
@@ -69,12 +75,30 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: const EdgeInsets.all(16.0),
                   children: [
                     CupertinoFormSection.insetGrouped(
-                      header: const Text(TextConstants.enterYourDetails),
+                      backgroundColor: ColorConstants.cardColor(context),
+                      header: Text(
+                        TextConstants.enterYourDetails,
+                        style: TextStyle(
+                          color: ColorConstants.textSecondary(context),
+                          fontSize: 13,
+                        ),
+                      ),
                       children: [
                         CupertinoTextFormFieldRow(
                           controller: _nameController,
-                          prefix: const Text(TextConstants.nameLabel),
+                          prefix: Text(
+                            TextConstants.nameLabel,
+                            style: TextStyle(
+                              color: ColorConstants.textPrimary(context),
+                            ),
+                          ),
                           placeholder: TextConstants.nameHint,
+                          placeholderStyle: TextStyle(
+                            color: ColorConstants.textTertiary(context),
+                          ),
+                          style: TextStyle(
+                            color: ColorConstants.textPrimary(context),
+                          ),
                           validator: (value) {
                             if (value?.isEmpty ?? true) {
                               return TextConstants.nameRequired;
@@ -87,8 +111,19 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         CupertinoTextFormFieldRow(
                           controller: _balanceController,
-                          prefix: const Text(TextConstants.balanceLabel),
+                          prefix: Text(
+                            TextConstants.balanceLabel,
+                            style: TextStyle(
+                              color: ColorConstants.textPrimary(context),
+                            ),
+                          ),
                           placeholder: TextConstants.balanceHint,
+                          placeholderStyle: TextStyle(
+                            color: ColorConstants.textTertiary(context),
+                          ),
+                          style: TextStyle(
+                            color: ColorConstants.textPrimary(context),
+                          ),
                           keyboardType: const TextInputType.numberWithOptions(
                             decimal: true,
                           ),
@@ -112,9 +147,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     if (state is LoginLoading)
                       const Center(child: CupertinoActivityIndicator())
                     else
-                      CupertinoButton.filled(
-                        onPressed: _handleLogin,
-                        child: const Text(TextConstants.khuljaSimSim),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: CupertinoButton.filled(
+                          onPressed: _handleLogin,
+                          child: const Text(TextConstants.khuljaSimSim),
+                        ),
                       ),
                   ],
                 ),
