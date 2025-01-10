@@ -155,6 +155,7 @@ class SelfProfileScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 CupertinoButton(
+                  padding: EdgeInsets.zero,
                   onPressed: () {
                     showCupertinoModalPopup(
                       context: context,
