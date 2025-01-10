@@ -20,6 +20,8 @@ class LoginCheckerCubit extends Cubit<AuthStates> {
   }
 
   void signOutUser() async {
+    SharedPreferences prefs = locator<SharedPreferences>();
+    await prefs.clear();
     emit(AuthStates.loggedOutState);
     Navigator.of(navigatorKey.currentContext!)
         .pushNamedAndRemoveUntil(AppRoutes.loginScreen, (route) => false);

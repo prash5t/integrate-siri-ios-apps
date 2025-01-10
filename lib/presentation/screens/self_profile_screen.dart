@@ -1,3 +1,4 @@
+import 'package:intl/intl.dart';
 import 'package:village_pay/exports.dart';
 
 class SelfProfileScreen extends StatelessWidget {
@@ -10,7 +11,7 @@ class SelfProfileScreen extends StatelessWidget {
       backgroundColor: ColorConstants.backgroundColor(context),
       navigationBar: CupertinoNavigationBar(
         middle: const Text(
-          "Self Profile",
+          TextConstants.selfProfile,
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
         backgroundColor: ColorConstants.surfaceColor(context).withOpacity(0.8),
@@ -24,11 +25,11 @@ class SelfProfileScreen extends StatelessWidget {
             showCupertinoDialog(
               context: context,
               builder: (context) => CupertinoAlertDialog(
-                title: const Text("Logout"),
-                content: const Text("Are you sure you want to logout?"),
+                title: const Text(TextConstants.logout),
+                content: const Text(TextConstants.areYouSure),
                 actions: [
                   CupertinoDialogAction(
-                    child: const Text("Cancel"),
+                    child: const Text(TextConstants.cancel),
                     onPressed: () => Navigator.pop(context),
                   ),
                   CupertinoDialogAction(
@@ -37,7 +38,7 @@ class SelfProfileScreen extends StatelessWidget {
                       Navigator.pop(context);
                       BlocProvider.of<LoginCheckerCubit>(context).signOutUser();
                     },
-                    child: const Text("Logout"),
+                    child: const Text(TextConstants.logoutConfirmation),
                   ),
                 ],
               ),
@@ -123,7 +124,7 @@ class SelfProfileScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Account Details",
+                    TextConstants.accountDetails,
                     style: TextStyle(
                       color: ColorConstants.textPrimary(context),
                       fontSize: 17,
@@ -133,15 +134,15 @@ class SelfProfileScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                   _buildDetailRow(
                     context,
-                    "ID",
+                    TextConstants.id,
                     villager.id,
                     CupertinoIcons.person_crop_circle_badge_checkmark,
                   ),
                   const SizedBox(height: 12),
                   _buildDetailRow(
                     context,
-                    "Joined",
-                    "Today", // You can add a timestamp to VillagerModel if needed
+                    TextConstants.joined,
+                    DateFormat('dd MMM yyyy').format(villager.joinedAt),
                     CupertinoIcons.calendar,
                   ),
                 ],

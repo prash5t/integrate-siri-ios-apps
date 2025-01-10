@@ -1,6 +1,6 @@
 class TextConstants {
   // Navigation titles
-  static const String villagers = "Villagers";
+  static const String villagers = "Village Pay";
   static const String login = "Login to your Village";
 
   // Login Screen
@@ -28,4 +28,18 @@ class TextConstants {
   // Villagers Screen
   static const String noVillagers = "No other villagers in your village yet";
   static const String villagerBalance = "Balance: ₹";
+
+  // Self Profile Screen
+  static const String selfProfile = "My Profile";
+  static const String logout = "Leaving Village?";
+  static const String areYouSure =
+      "Are you sure you want to leave this village?";
+  static const String cancel = "Stay";
+  static const String logoutConfirmation = "Leave";
+  static const String accountDetails = "Account Details";
+  static const String id = "ID";
+  static const String name = "Name";
+  static const String balance = "Balance";
+  static const String joined = "Joined";
+  static const String accountOwner = "Account Owner";
 }

@@ -23,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_formKey.currentState?.validate() ?? false) {
       final villager = VillagerModel(
         id: const Uuid().v4(),
+        joinedAt: DateTime.now(),
         name: _nameController.text.trim(),
         balanceInRs: double.parse(_balanceController.text.trim()),
       );

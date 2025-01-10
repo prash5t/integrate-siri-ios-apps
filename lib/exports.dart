@@ -28,3 +28,4 @@ export 'package:village_pay/cubits/get_villagers_cubit/get_villagers_state.dart'
 export 'package:village_pay/presentation/screens/self_profile_screen.dart';
 export 'package:village_pay/presentation/screens/villager_profile_screen.dart';
 export 'package:village_pay/presentation/widgets/villager_card.dart';
+export 'package:village_pay/presentation/widgets/logged_in_user_card.dart';
