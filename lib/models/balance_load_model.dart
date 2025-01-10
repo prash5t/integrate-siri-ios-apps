@@ -15,7 +15,7 @@ class BalanceLoadModel {
       id: json['id'],
       villagerId: json['villagerId'],
       balanceInRs: json['balanceInRs'],
-      txnTimeStamp: json['txnTimeStamp'],
+      txnTimeStamp: DateTime.tryParse(json['txnTimeStamp']) ?? DateTime.now(),
     );
   }
 
@@ -24,7 +24,7 @@ class BalanceLoadModel {
       'id': id,
       'villagerId': villagerId,
       'balanceInRs': balanceInRs,
-      'txnTimeStamp': txnTimeStamp,
+      'txnTimeStamp': txnTimeStamp.toString(),
     };
   }
 }

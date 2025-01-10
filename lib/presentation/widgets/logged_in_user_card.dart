@@ -1,8 +1,11 @@
 import 'package:village_pay/exports.dart';
 
 class LoggedInUserCard extends StatelessWidget {
-  final VillagerModel villager;
-  const LoggedInUserCard({super.key, required this.villager});
+  final ValueNotifier<VillagerModel?> villager;
+  const LoggedInUserCard({
+    super.key,
+    required this.villager,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +14,7 @@ class LoggedInUserCard extends StatelessWidget {
         Navigator.pushNamed(
           context,
           AppRoutes.selfProfileScreen,
-          arguments: villager,
+          arguments: villager.value,
         );
       },
       child: Container(
@@ -52,7 +55,7 @@ class LoggedInUserCard extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      villager.name.characters.first.toUpperCase(),
+                      villager.value!.name.characters.first.toUpperCase(),
                       style: const TextStyle(
                         color: CupertinoColors.white,
                         fontSize: 24,
@@ -67,7 +70,7 @@ class LoggedInUserCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        villager.name,
+                        villager.value!.name,
                         style: const TextStyle(
                           color: CupertinoColors.white,
                           fontSize: 20,
@@ -120,7 +123,7 @@ class LoggedInUserCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    villager.balanceInRs.toStringAsFixed(2),
+                    villager.value!.balanceInRs.toStringAsFixed(2),
                     style: const TextStyle(
                       color: CupertinoColors.white,
                       fontSize: 18,

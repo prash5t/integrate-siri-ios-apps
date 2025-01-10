@@ -3,7 +3,7 @@ import 'package:village_pay/exports.dart';
 class GetVillagersCubit extends Cubit<GetVillagersState> {
   GetVillagersCubit() : super(VillagersLoadingState());
 
-  late VillagerModel loggedInVillager;
+  ValueNotifier<VillagerModel?> loggedInVillager = ValueNotifier(null);
 
   Future<void> getVillagers() async {
     emit(VillagersLoadingState());
@@ -24,7 +24,7 @@ class GetVillagersCubit extends Cubit<GetVillagersState> {
           villagersList.add(villagerModel);
         }
         if (villagerModel.id == loggedInVillagerId) {
-          loggedInVillager = villagerModel;
+          loggedInVillager.value = villagerModel;
         }
       }
       emit(VillagersLoadedState(villagersList));

@@ -43,4 +43,13 @@ class TextConstants {
   static const String balance = "Balance";
   static const String joined = "Joined";
   static const String accountOwner = "Account Owner";
+
+  // Balance Load
+  static const String loadBalance = "Load Balance";
+  static const String enterAmount = "Enter amount to load";
+  static const String amountHint = "Amount in Rs.";
+  static const String load = "Load";
+  static const String loadSuccess = "Balance loaded successfully!";
+  static const String transactions = "Transactions";
+  static const String noTransactions = "No transactions yet";
 }
