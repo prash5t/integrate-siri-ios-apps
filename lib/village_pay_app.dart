@@ -13,17 +13,17 @@ class VillagePayApp extends StatelessWidget {
       ],
       child: CupertinoApp(
         debugShowCheckedModeBanner: false,
-        theme: const CupertinoThemeData(
-          brightness: Brightness.light,
+        theme: CupertinoThemeData(
+          brightness: MediaQuery.platformBrightnessOf(
+              navigatorKey.currentContext ?? context),
           primaryColor: CupertinoColors.systemBlue,
           scaffoldBackgroundColor: CupertinoColors.systemBackground,
           barBackgroundColor: CupertinoColors.systemBackground,
-          textTheme: CupertinoTextThemeData(
+          textTheme: const CupertinoTextThemeData(
             primaryColor: CupertinoColors.systemBlue,
             textStyle: TextStyle(
               fontFamily: '.SF Pro Text',
               fontSize: 17,
-              color: CupertinoColors.label,
             ),
           ),
         ),
