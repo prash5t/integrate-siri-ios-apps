@@ -11,6 +11,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return CupertinoPageRoute(builder: (context) => const LoginScreen());
     case AppRoutes.villagersScreen:
       return CupertinoPageRoute(builder: (context) => const VillagersScreen());
+    case AppRoutes.selfProfileScreen:
+      return CupertinoPageRoute(
+          builder: (context) =>
+              SelfProfileScreen(villager: argument as VillagerModel));
+    case AppRoutes.villagerProfileScreen:
+      return CupertinoPageRoute(
+          builder: (context) =>
+              VillagerProfileScreen(villager: argument as VillagerModel));
     default:
       return CupertinoPageRoute(
           builder: (context) => const LoginCheckerScreen());

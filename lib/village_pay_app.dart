@@ -9,9 +9,24 @@ class VillagePayApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => LoginCheckerCubit()),
         BlocProvider(create: (context) => LoginCubit()),
+        BlocProvider(create: (context) => GetVillagersCubit()),
       ],
       child: CupertinoApp(
         debugShowCheckedModeBanner: false,
+        theme: const CupertinoThemeData(
+          brightness: Brightness.light,
+          primaryColor: CupertinoColors.systemBlue,
+          scaffoldBackgroundColor: CupertinoColors.systemBackground,
+          barBackgroundColor: CupertinoColors.systemBackground,
+          textTheme: CupertinoTextThemeData(
+            primaryColor: CupertinoColors.systemBlue,
+            textStyle: TextStyle(
+              fontFamily: '.SF Pro Text',
+              fontSize: 17,
+              color: CupertinoColors.label,
+            ),
+          ),
+        ),
         onGenerateRoute: onGenerateRoute,
         navigatorKey: navigatorKey,
       ),

@@ -24,4 +24,8 @@ class TextConstants {
 
   // Login Failure
   static const String loginFailed = "Failed to login";
+
+  // Villagers Screen
+  static const String noVillagers = "No other villagers in your village yet";
+  static const String villagerBalance = "Balance: ₹";
 }

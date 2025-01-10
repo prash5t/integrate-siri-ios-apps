@@ -13,7 +13,7 @@ class VillagerModel {
     return VillagerModel(
       id: json['id'],
       name: json['name'],
-      balanceInRs: json['balanceinRs'],
+      balanceInRs: json['balanceInRs'],
     );
   }
 

@@ -1,5 +1,4 @@
 import 'package:village_pay/exports.dart';
-import 'package:uuid/uuid.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

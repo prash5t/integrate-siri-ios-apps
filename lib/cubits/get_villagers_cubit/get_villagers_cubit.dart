@@ -9,10 +9,18 @@ class GetVillagersCubit extends Cubit<GetVillagersState> {
     List<String>? villagers = locator<SharedPreferences>()
         .getStringList(SharedPrefsConstants.villagersList);
 
+    String? loggedInVillagerId = locator<SharedPreferences>()
+        .getString(SharedPrefsConstants.loggedInVillagerId);
+
     if (villagers != null) {
       List<VillagerModel> villagersList = [];
       for (var villager in villagers) {
-        villagersList.add(VillagerModel.fromJson(jsonDecode(villager)));
+        VillagerModel villagerModel =
+            VillagerModel.fromJson(jsonDecode(villager));
+        // excluding the logged in villager
+        if (villagerModel.id != loggedInVillagerId) {
+          villagersList.add(villagerModel);
+        }
       }
       emit(VillagersLoadedState(villagersList));
     } else {
