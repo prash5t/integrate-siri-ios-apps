@@ -42,6 +42,17 @@ class TransactionList extends StatelessWidget {
                     t.balanceTransferModel?.toId == villagerId)))
         .toList();
 
+    // Sort transactions by timestamp in descending order (latest first)
+    transactions.sort((a, b) {
+      DateTime timeA = a.transactionType == TransactionType.balanceLoad
+          ? a.balanceLoadModel!.txnTimeStamp
+          : a.balanceTransferModel!.txnTimeStamp;
+      DateTime timeB = b.transactionType == TransactionType.balanceLoad
+          ? b.balanceLoadModel!.txnTimeStamp
+          : b.balanceTransferModel!.txnTimeStamp;
+      return timeB.compareTo(timeA); // Reverse order for latest first
+    });
+
     String getVillagerName(String id) {
       return allVillagers
           .firstWhere(
