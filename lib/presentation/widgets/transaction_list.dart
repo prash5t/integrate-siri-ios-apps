@@ -9,6 +9,8 @@ class TransactionList extends StatelessWidget {
   Widget build(BuildContext context) {
     List<String>? transactionsJson = locator<SharedPreferences>()
         .getStringList(SharedPrefsConstants.transactionsList);
+    List<String>? villagersJson = locator<SharedPreferences>()
+        .getStringList(SharedPrefsConstants.villagersList);
 
     if (transactionsJson == null || transactionsJson.isEmpty) {
       return Center(
@@ -22,6 +24,14 @@ class TransactionList extends StatelessWidget {
       );
     }
 
+    // Get all villagers for name lookup
+    List<VillagerModel> allVillagers = [];
+    if (villagersJson != null) {
+      allVillagers = villagersJson
+          .map((e) => VillagerModel.fromJson(jsonDecode(e)))
+          .toList();
+    }
+
     List<TransactionModel> transactions = transactionsJson
         .map((e) => TransactionModel.fromJson(jsonDecode(e)))
         .where((t) =>
@@ -32,6 +42,20 @@ class TransactionList extends StatelessWidget {
                     t.balanceTransferModel?.toId == villagerId)))
         .toList();
 
+    String getVillagerName(String id) {
+      return allVillagers
+          .firstWhere(
+            (v) => v.id == id,
+            orElse: () => VillagerModel(
+              id: '',
+              name: 'Unknown',
+              balanceInRs: 0,
+              joinedAt: DateTime.now(),
+            ),
+          )
+          .name;
+    }
+
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -40,6 +64,22 @@ class TransactionList extends StatelessWidget {
         final transaction = transactions[index];
         final isLoad =
             transaction.transactionType == TransactionType.balanceLoad;
+
+        String getTransactionText() {
+          if (isLoad) {
+            return 'Loaded ₹${transaction.balanceLoadModel?.balanceInRs.toStringAsFixed(2)}';
+          } else {
+            final transfer = transaction.balanceTransferModel!;
+            final amount = transfer.amount.toStringAsFixed(2);
+            if (transfer.fromId == villagerId) {
+              // Current user is sender
+              return 'Sent ₹$amount to ${getVillagerName(transfer.toId)}';
+            } else {
+              // Current user is receiver
+              return 'Received ₹$amount from ${getVillagerName(transfer.fromId)}';
+            }
+          }
+        }
 
         return Container(
           margin: const EdgeInsets.only(bottom: 8),
@@ -73,9 +113,7 @@ class TransactionList extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      isLoad
-                          ? 'Loaded ₹${transaction.balanceLoadModel?.balanceInRs.toStringAsFixed(2)}'
-                          : 'Transfer ₹${transaction.balanceTransferModel?.amount.toStringAsFixed(2)}',
+                      getTransactionText(),
                       style: TextStyle(
                         color: ColorConstants.textPrimary(context),
                         fontSize: 15,
