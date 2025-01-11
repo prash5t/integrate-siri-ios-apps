@@ -4,19 +4,20 @@ class GetVillagersCubit extends Cubit<GetVillagersState> {
   GetVillagersCubit() : super(VillagersLoadingState());
 
   ValueNotifier<VillagerModel?> loggedInVillager = ValueNotifier(null);
+  ValueNotifier<List<VillagerModel>> villagers = ValueNotifier([]);
 
   Future<void> getVillagers() async {
     emit(VillagersLoadingState());
 
-    List<String>? villagers = locator<SharedPreferences>()
+    List<String>? villagersJson = locator<SharedPreferences>()
         .getStringList(SharedPrefsConstants.villagersList);
 
     String? loggedInVillagerId = locator<SharedPreferences>()
         .getString(SharedPrefsConstants.loggedInVillagerId);
 
-    if (villagers != null) {
+    if (villagersJson != null) {
       List<VillagerModel> villagersList = [];
-      for (var villager in villagers) {
+      for (var villager in villagersJson) {
         VillagerModel villagerModel =
             VillagerModel.fromJson(jsonDecode(villager));
         // excluding the logged in villager
@@ -27,8 +28,11 @@ class GetVillagersCubit extends Cubit<GetVillagersState> {
           loggedInVillager.value = villagerModel;
         }
       }
-      emit(VillagersLoadedState(villagersList));
+      List<VillagerModel> updatedVillagers = villagersList;
+      villagers.value = updatedVillagers;
+      emit(VillagersLoadedState(updatedVillagers));
     } else {
+      villagers.value = [];
       emit(VillagersLoadedState([]));
     }
   }
