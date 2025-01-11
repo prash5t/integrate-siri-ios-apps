@@ -18,7 +18,7 @@ class BalanceTransferModel {
       fromId: json['fromId'],
       toId: json['toId'],
       amount: json['amount'],
-      txnTimeStamp: json['txnTimeStamp'],
+      txnTimeStamp: DateTime.tryParse(json['txnTimeStamp']) ?? DateTime.now(),
     );
   }
 
@@ -28,7 +28,7 @@ class BalanceTransferModel {
       'fromId': fromId,
       'toId': toId,
       'amount': amount,
-      'txnTimeStamp': txnTimeStamp,
+      'txnTimeStamp': txnTimeStamp.toString(),
     };
   }
 }

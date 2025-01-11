@@ -52,4 +52,11 @@ class TextConstants {
   static const String loadSuccess = "Balance loaded successfully!";
   static const String transactions = "Transactions";
   static const String noTransactions = "No transactions yet";
+
+  // Transfer Balance
+  static const String transferBalance = "Transfer Balance";
+  static const String enterTransferAmount = "Enter amount to transfer";
+  static const String transfer = "Transfer";
+  static const String transferSuccess = "Balance transferred successfully!";
+  static const String insufficientBalance = "Insufficient balance";
 }

@@ -9,11 +9,8 @@ class VillagerProfileScreen extends StatelessWidget {
     return CupertinoPageScaffold(
       backgroundColor: ColorConstants.backgroundColor(context),
       navigationBar: CupertinoNavigationBar(
-        middle: Text(
-          villager.name,
-          style: const TextStyle(fontWeight: FontWeight.w600),
-        ),
-        backgroundColor: ColorConstants.surfaceColor(context).withOpacity(0.8),
+        backgroundColor: ColorConstants.backgroundColor(context),
+        middle: Text(villager.name),
       ),
       child: SafeArea(
         child: ListView(
@@ -74,8 +71,81 @@ class VillagerProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 24),
-            // More sections can be added here for transactions, etc.
+            const SizedBox(height: 16),
+            GestureDetector(
+              onTap: () {
+                showCupertinoModalPopup(
+                  context: context,
+                  builder: (context) => Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: ColorConstants.backgroundColor(context),
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(12),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          TextConstants.transferBalance,
+                          style: TextStyle(
+                            color: ColorConstants.textPrimary(context),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        BlocProvider(
+                          create: (context) => BalanceOperationsCubit(),
+                          child: TransferBalanceForm(
+                            receiver: villager,
+                            sender: context
+                                .read<GetVillagersCubit>()
+                                .loggedInVillager
+                                .value!,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+              child: Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: ColorConstants.cardColor(context),
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color:
+                          ColorConstants.textPrimary(context).withOpacity(0.05),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      TextConstants.transferBalance,
+                      style: TextStyle(
+                        color: ColorConstants.textPrimary(context),
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Icon(
+                      CupertinoIcons.arrow_right_circle_fill,
+                      color: ColorConstants.primaryColor(context),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            TransactionList(villagerId: villager.id),
           ],
         ),
       ),

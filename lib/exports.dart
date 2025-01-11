@@ -34,3 +34,4 @@ export 'package:village_pay/cubits/balance_operations_cubit/balance_operations_s
 export 'package:village_pay/presentation/widgets/transaction_list.dart';
 export 'package:village_pay/models/transaction_model.dart';
 export 'package:village_pay/presentation/widgets/load_balance_form.dart';
+export 'package:village_pay/presentation/widgets/transfer_balance_form.dart';
