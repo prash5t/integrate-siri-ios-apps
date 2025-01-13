@@ -11,6 +11,7 @@ class _VillagersScreenState extends State<VillagersScreen> {
   @override
   void initState() {
     super.initState();
+    SiriUtil().init();
     BlocProvider.of<GetVillagersCubit>(context).getVillagers();
   }
 
