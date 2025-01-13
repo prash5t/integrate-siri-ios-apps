@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		2688C0ECA6095250576DFA5D /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2939C4000ABD71C4589205 /* Pods_Runner.framework */; };
-		27CEE2962D34D73B00860BCF /* CheckBalanceIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CEE2952D34D73B00860BCF /* CheckBalanceIntent.swift */; };
-		27CEE2982D34D81000860BCF /* AllAppShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CEE2972D34D81000860BCF /* AllAppShortcuts.swift */; };
 		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
@@ -67,8 +65,6 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		27CEE2942D34CFA200860BCF /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
-		27CEE2952D34D73B00860BCF /* CheckBalanceIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBalanceIntent.swift; sourceTree = "<group>"; };
-		27CEE2972D34D81000860BCF /* AllAppShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAppShortcuts.swift; sourceTree = "<group>"; };
 		27CEE29F2D34E67100860BCF /* Village_PayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Village_PayExtension.swift; sourceTree = "<group>"; };
 		27CEE2A12D34E67100860BCF /* Village_Pay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Village_Pay.swift; sourceTree = "<group>"; };
 		27CEE2A32D34E67100860BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -214,8 +210,6 @@
 				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
-				27CEE2952D34D73B00860BCF /* CheckBalanceIntent.swift */,
-				27CEE2972D34D81000860BCF /* AllAppShortcuts.swift */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -436,9 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
-				27CEE2982D34D81000860BCF /* AllAppShortcuts.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
-				27CEE2962D34D73B00860BCF /* CheckBalanceIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
