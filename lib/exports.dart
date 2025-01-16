@@ -35,6 +35,4 @@ export 'package:village_pay/presentation/widgets/transaction_list.dart';
 export 'package:village_pay/models/transaction_model.dart';
 export 'package:village_pay/presentation/widgets/load_balance_form.dart';
 export 'package:village_pay/presentation/widgets/transfer_balance_form.dart';
-export 'package:intelligence/intelligence.dart';
-export 'package:intelligence/model/representable.dart';
 export 'package:village_pay/core/siri/siri_util.dart';
