@@ -14,17 +14,15 @@ struct AllAppShortcuts: AppShortcutsProvider {
                 ],
                 systemImageName: "banknote"
             ),
-             AppShortcut(
-                 intent: LoadBalanceIntent(),
-                 phrases: [
-                     "Load \(\.$amount) rupees in \(.applicationName)",
-                     "Load \(\.$amount) rupees in my \(.applicationName) account",
-                     "Deposit \(\.$amount) rupees in \(.applicationName)",
-                     "Deposit \(\.$amount) rupees in my \(.applicationName) account",
-                     "Add \(\.$amount) rupees to my \(.applicationName) account",
-                 ],
-                 systemImageName: "plus.circle.fill"
-             ) 
+            AppShortcut(
+                intent: LoadBalanceIntent(),
+                phrases: [
+                    "Load money in \(.applicationName)",
+                    "Deposit money in \(.applicationName)",
+                    "Add money to \(.applicationName)",
+                ],
+                systemImageName: "plus.circle.fill"
+            )
         ]
     }
 }

@@ -2,7 +2,7 @@ import SwiftUI
 import AppIntents
 
 struct LoadBalanceView: View {
-    let amount: Float
+    let amount: Int
     let onConfirm: () -> Void
     
     var body: some View {
@@ -10,7 +10,7 @@ struct LoadBalanceView: View {
             Text("Confirm Deposit")
                 .font(.headline)
             
-            Text("₹\(String(format: "%.2f", amount))")
+            Text("₹\(amount)")
                 .font(.system(size: 32, weight: .bold))
                 .foregroundColor(.blue)
             
@@ -40,5 +40,5 @@ struct LoadBalanceView: View {
 }
 
 #Preview {
-    LoadBalanceView(amount: 100.0, onConfirm: {})
+    LoadBalanceView(amount: 100, onConfirm: {})
 } 
