@@ -26,3 +26,9 @@ struct CheckBalanceIntent: AppIntent {
         
     }
 }
+
+extension CheckBalanceIntent {
+    static var parameterSummary: some ParameterSummary {
+        Summary("Check balance in Village Pay")
+    }
+}

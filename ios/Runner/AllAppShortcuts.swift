@@ -4,13 +4,6 @@ struct AllAppShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         return [
             AppShortcut(
-                intent: OpenProfileIntent(),
-                phrases: [
-                    "Open my profile in \(.applicationName)",
-                    "Open my profile in \(.applicationName) app"
-                ]
-            ),
-            AppShortcut(
                 intent: CheckBalanceIntent(),
                 phrases: [
                     "Check my balance in \(.applicationName)",
@@ -20,7 +13,18 @@ struct AllAppShortcuts: AppShortcutsProvider {
                     "Can you check my balance in \(.applicationName)",
                 ],
                 systemImageName: "banknote"
-            )
+            ),
+             AppShortcut(
+                 intent: LoadBalanceIntent(),
+                 phrases: [
+                     "Load \(\.$amount) rupees in \(.applicationName)",
+                     "Load \(\.$amount) rupees in my \(.applicationName) account",
+                     "Deposit \(\.$amount) rupees in \(.applicationName)",
+                     "Deposit \(\.$amount) rupees in my \(.applicationName) account",
+                     "Add \(\.$amount) rupees to my \(.applicationName) account",
+                 ],
+                 systemImageName: "plus.circle.fill"
+             ) 
         ]
     }
 }
