@@ -8,7 +8,7 @@ struct CheckBalanceIntent: AppIntent {
     let appName: String = "Village Pay"
     
     @MainActor
-    func perform() async throws -> some IntentResult & ProvidesDialog {
+    func perform() async throws -> some IntentResult & ProvidesDialog & ShowsSnippetView {
         guard let loggedInVillager = SharedPrefsHelper.shared.getLoggedInVillager() else {
             let errMsg: LocalizedStringResource = "Account not found"
             let errorDialog = IntentDialog(full: errMsg, supporting: errMsg)
@@ -16,10 +16,13 @@ struct CheckBalanceIntent: AppIntent {
         }
         
         let balance = Float(loggedInVillager.balanceInRs)
-        let toSpeak: LocalizedStringResource = "You have Rs.\(String(format: "%.2f", balance)) in \(appName)"
+        let userName = loggedInVillager.name
+        let toSpeak: LocalizedStringResource = "\(userName), You have Rs.\(String(format: "%.2f", balance)) in \(appName)"
         let dialog = IntentDialog(full: toSpeak, supporting: toSpeak)
         
-        return .result(dialog: dialog)
+        let snippet = BalanceWidgetView(balance: balance)
+        
+        return .result(dialog: dialog, view: snippet)
         
     }
 }
