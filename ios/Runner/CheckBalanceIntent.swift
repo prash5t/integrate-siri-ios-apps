@@ -20,5 +20,6 @@ struct CheckBalanceIntent: AppIntent {
         let dialog = IntentDialog(full: toSpeak, supporting: toSpeak)
         
         return .result(dialog: dialog)
+        
     }
 }

@@ -1,23 +1,20 @@
 import Foundation
 
-struct VillagerModel: Codable {
-    let id: String
-    let name: String
-    let balanceInRs: Double
-    let joinedAt: String
-}
-
 class SharedPrefsHelper {
+    let kLoggedInVillagerId = "loggedInVillagerId"
+    let kVillagersList = "villagersList"
+    let kGroup = "group.com.example.villagePay"
     static let shared = SharedPrefsHelper()
     
-    private let userDefaults = UserDefaults.standard
+    private let userDefaults = UserDefaults()
+//    UserDefaults.standard
     
     func getLoggedInVillagerId() -> String? {
-        return userDefaults.string(forKey: "loggedInVillagerId")
+        return userDefaults.string(forKey: kLoggedInVillagerId)
     }
     
     func getVillagersList() -> [VillagerModel]? {
-        guard let villagersJsonArray = userDefaults.stringArray(forKey: "villagersList") else {
+        guard let villagersJsonArray = userDefaults.stringArray(forKey: kVillagersList) else {
             return nil
         }
         
