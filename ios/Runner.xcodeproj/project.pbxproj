@@ -82,12 +82,7 @@
 		275F8C2A2D395D5E00B4F177 /* BalanceWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceWidgetView.swift; sourceTree = "<group>"; };
 		275F8C2C2D3968AE00B4F177 /* SharedPrefsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedPrefsHelper.swift; sourceTree = "<group>"; };
 		27CEE2942D34CFA200860BCF /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
-		27CEE29F2D34E67100860BCF /* Village_PayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Village_PayExtension.swift; sourceTree = "<group>"; };
-		27CEE2A12D34E67100860BCF /* Village_Pay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Village_Pay.swift; sourceTree = "<group>"; };
-		27CEE2A32D34E67100860BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27CEE2B12D34E6AC00860BCF /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
-		27CEE2B42D34E6AC00860BCF /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
-		27CEE2B62D34E6AC00860BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3264C0C57CB5DAB253482B32 /* Pods-RunnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release.xcconfig"; sourceTree = "<group>"; };
 		331C807B294A618700263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		331C8081294A63A400263BE5 /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,27 +136,10 @@
 		275F8C272D39512100B4F177 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				275F8C2A2D395D5E00B4F177 /* BalanceWidgetView.swift */,
+				270A3B3D2D3E0EDC007D0D59 /* LoadBalanceView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		27CEE29E2D34E67100860BCF /* Village Pay */ = {
-			isa = PBXGroup;
-			children = (
-				27CEE29F2D34E67100860BCF /* Village_PayExtension.swift */,
-				27CEE2A12D34E67100860BCF /* Village_Pay.swift */,
-				27CEE2A32D34E67100860BCF /* Info.plist */,
-			);
-			path = "Village Pay";
-			sourceTree = "<group>";
-		};
-		27CEE2B32D34E6AC00860BCF /* Village Pay */ = {
-			isa = PBXGroup;
-			children = (
-				27CEE2B42D34E6AC00860BCF /* IntentHandler.swift */,
-				27CEE2B62D34E6AC00860BCF /* Info.plist */,
-			);
-			path = "Village Pay";
 			sourceTree = "<group>";
 		};
 		331C8082294A63A400263BE5 /* RunnerTests */ = {
@@ -211,8 +189,6 @@
 			children = (
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
-				27CEE29E2D34E67100860BCF /* Village Pay */,
-				27CEE2B32D34E6AC00860BCF /* Village Pay */,
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
 				562B94BF73ED120401B4DC5A /* Pods */,
@@ -233,10 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				270A3B3C2D3E0EDB007D0D59 /* LoadBalanceIntent.swift */,
-				270A3B3D2D3E0EDC007D0D59 /* LoadBalanceView.swift */,
 				270A3B392D3BEC87007D0D59 /* Models */,
 				275F8C2C2D3968AE00B4F177 /* SharedPrefsHelper.swift */,
-				275F8C2A2D395D5E00B4F177 /* BalanceWidgetView.swift */,
 				275F8C272D39512100B4F177 /* Views */,
 				27CEE2942D34CFA200860BCF /* Runner.entitlements */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
