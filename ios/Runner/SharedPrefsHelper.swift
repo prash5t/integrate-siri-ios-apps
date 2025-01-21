@@ -4,6 +4,7 @@ class SharedPrefsHelper {
     // Match exact keys from SharedPrefsConstants.dart
     static let kLoggedInVillagerId = "flutter.loggedInVillagerId"  // Changed to static
     static let kVillagersList = "flutter.villagersList"  // Changed to static
+    static let kTransactionsList = "flutter.transactionsList"  // Added new key
     static let shared = SharedPrefsHelper()
     
     private let userDefaults = UserDefaults.standard
@@ -66,5 +67,72 @@ class SharedPrefsHelper {
         let foundVillager = villagers.first { $0.id == loggedInId }
         print("Found logged in villager: \(String(describing: foundVillager))")
         return foundVillager
+    }
+    
+    func loadBalance(amount: Double) throws {
+        // Get logged in villager
+        guard let loggedInId = getLoggedInVillagerId(),
+              var villagers = getVillagersList() else {
+            throw NSError(domain: "VillagePay", code: 1, userInfo: [NSLocalizedDescriptionKey: "No logged in user found"])
+        }
+        
+        // Find and update villager's balance
+        guard let index = villagers.firstIndex(where: { $0.id == loggedInId }) else {
+            throw NSError(domain: "VillagePay", code: 2, userInfo: [NSLocalizedDescriptionKey: "Logged in user not found in villagers list"])
+        }
+        
+        // Create balance load transaction
+        let balanceLoad = BalanceLoadModel(
+            id: UUID().uuidString,
+            villagerId: loggedInId,
+            balanceInRs: amount,
+            txnTimeStamp: Date()
+        )
+        
+        // Create transaction record
+        let transaction = TransactionModel(
+            id: UUID().uuidString,
+            transactionType: .balanceLoad,
+            balanceLoadModel: balanceLoad,
+            balanceTransferModel: nil
+        )
+        
+        // Update villager's balance
+        let updatedVillager = VillagerModel(
+            id: villagers[index].id,
+            name: villagers[index].name,
+            balanceInRs: villagers[index].balanceInRs + amount,
+            joinedAt: villagers[index].joinedAt
+        )
+        villagers[index] = updatedVillager
+        
+        // Get existing transactions
+        var transactions: [TransactionModel] = []
+        if let transactionsJson = userDefaults.stringArray(forKey: SharedPrefsHelper.kTransactionsList) {
+            transactions = transactionsJson.compactMap { jsonString in
+                guard let jsonData = jsonString.data(using: .utf8) else { return nil }
+                return try? JSONDecoder().decode(TransactionModel.self, from: jsonData)
+            }
+        }
+        
+        // Add new transaction
+        transactions.append(transaction)
+        
+        // Save updated villagers list
+        let villagersJson = villagers.map { villager -> String in
+            let jsonData = try! JSONEncoder().encode(villager)
+            return String(data: jsonData, encoding: .utf8)!
+        }
+        userDefaults.set(villagersJson, forKey: SharedPrefsHelper.kVillagersList)
+        
+        // Save updated transactions list
+        let transactionsJson = transactions.map { transaction -> String in
+            let jsonData = try! JSONEncoder().encode(transaction)
+            return String(data: jsonData, encoding: .utf8)!
+        }
+        userDefaults.set(transactionsJson, forKey: SharedPrefsHelper.kTransactionsList)
+        
+        // Ensure changes are saved
+        userDefaults.synchronize()
     }
 } 
