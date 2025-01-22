@@ -108,7 +108,7 @@ class SharedPrefsHelper {
         )
         print("✅ Created balance load model")
         
-        // Create transaction record
+//         Create transaction record
         let transaction = TransactionModel(
             id: UUID().uuidString,
             transactionType: .balanceLoad,
@@ -127,7 +127,7 @@ class SharedPrefsHelper {
         print("New balance will be: \(updatedVillager.balanceInRs)")
         villagers[index] = updatedVillager
         
-        // 5. Debug transactions list
+//         5. Debug transactions list
         var transactions: [TransactionModel] = []
         if let transactionsJson = userDefaults.stringArray(forKey: SharedPrefsHelper.kTransactionsList) {
             print("Found existing transactions: \(transactionsJson.count)")
@@ -151,10 +151,15 @@ class SharedPrefsHelper {
         transactions.append(transaction)
         print("✅ Added new transaction. Total transactions: \(transactions.count)")
         
-        // 6. Debug saving villagers list
+//         6. Debug saving villagers list
         do {
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .iso8601
+            encoder.outputFormatting = .prettyPrinted
             let villagersJson = try villagers.map { villager -> String in
-                let jsonData = try JSONEncoder().encode(villager)
+                let jsonData = try 
+//                JSONEncoder()
+                    encoder.encode(villager)
                 guard let jsonString = String(data: jsonData, encoding: .utf8) else {
                     throw NSError(domain: "VillagePay", code: 3, userInfo: [NSLocalizedDescriptionKey: "Failed to encode villager data"])
                 }

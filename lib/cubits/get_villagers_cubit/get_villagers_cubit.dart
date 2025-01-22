@@ -16,21 +16,25 @@ class GetVillagersCubit extends Cubit<GetVillagersState> {
         .getString(SharedPrefsConstants.loggedInVillagerId);
 
     if (villagersJson != null) {
-      List<VillagerModel> villagersList = [];
-      for (var villager in villagersJson) {
-        VillagerModel villagerModel =
-            VillagerModel.fromJson(jsonDecode(villager));
-        // excluding the logged in villager
-        if (villagerModel.id != loggedInVillagerId) {
-          villagersList.add(villagerModel);
+      try {
+        List<VillagerModel> villagersList = [];
+        for (var villager in villagersJson) {
+          VillagerModel villagerModel =
+              VillagerModel.fromJson(jsonDecode(villager));
+          // excluding the logged in villager
+          if (villagerModel.id != loggedInVillagerId) {
+            villagersList.add(villagerModel);
+          }
+          if (villagerModel.id == loggedInVillagerId) {
+            loggedInVillager.value = villagerModel;
+          }
         }
-        if (villagerModel.id == loggedInVillagerId) {
-          loggedInVillager.value = villagerModel;
-        }
+        List<VillagerModel> updatedVillagers = villagersList;
+        villagers.value = updatedVillagers;
+        emit(VillagersLoadedState(updatedVillagers));
+      } catch (e) {
+        emit(VillagersLoadedState([]));
       }
-      List<VillagerModel> updatedVillagers = villagersList;
-      villagers.value = updatedVillagers;
-      emit(VillagersLoadedState(updatedVillagers));
     } else {
       villagers.value = [];
       emit(VillagersLoadedState([]));
