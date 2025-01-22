@@ -34,7 +34,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Load Rs. ${amount}in your account</string>
+					<string>Load Rs. ${amount} in Village Pay</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>qa4iOB</string>
 					<key>INIntentParameterCombinationUpdatesLinked</key>
@@ -50,7 +50,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Load Rs. ${amount}in your account</string>
+					<string>Load Rs. ${amount} in Village Pay</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>wrkQMf</string>
 				</dict>
@@ -145,11 +145,11 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Rs. ${amount}has been loaded in your account</string>
+						<string>Rs. ${amount} has been loaded in your account</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>SfjNF3</string>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Rs. ${amount}has been loaded in your account</string>
+						<string>Rs. ${amount} has been loaded in your account</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>8217wW</string>
 						<key>INIntentResponseCodeName</key>
@@ -159,11 +159,11 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Could not load Rs. ${amount}in your account at the moment</string>
+						<string>Could not load Rs. ${amount} in your account at the moment</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>STFYfg</string>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Could not load Rs. ${amount}in your account at the moment</string>
+						<string>Could not load Rs. ${amount} in your account at the moment</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>T9ZIXO</string>
 						<key>INIntentResponseCodeName</key>

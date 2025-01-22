@@ -7,7 +7,7 @@ class SharedPrefsHelper {
     static let kTransactionsList = "flutter.transactionsList"  // Added new key
     static let shared = SharedPrefsHelper()
     
-    private let userDefaults = UserDefaults.standard
+    private let userDefaults = UserDefaults(suiteName: "group.com.example.villagePay")!
     
     func debugPrintAllUserDefaults() {
         print("==== All UserDefaults ====")
@@ -70,16 +70,34 @@ class SharedPrefsHelper {
     }
     
     func loadBalance(amount: Double) throws {
-        // Get logged in villager
-        guard let loggedInId = getLoggedInVillagerId(),
-              var villagers = getVillagersList() else {
+        print("=== Load Balance Debug Start ===")
+        
+        // 1. Debug logged in user
+        guard let loggedInId = getLoggedInVillagerId() else {
+            print("❌ No logged in user ID found")
             throw NSError(domain: "VillagePay", code: 1, userInfo: [NSLocalizedDescriptionKey: "No logged in user found"])
         }
+        print("✅ Found logged in ID: \(loggedInId)")
         
-        // Find and update villager's balance
+        // 2. Debug villagers list
+        guard var villagers = getVillagersList() else {
+            print("❌ No villagers list found")
+            throw NSError(domain: "VillagePay", code: 2, userInfo: [NSLocalizedDescriptionKey: "Villagers list not found"])
+        }
+        print("✅ Found villagers list with \(villagers.count) villagers")
+        
+        // 3. Debug finding user in list
         guard let index = villagers.firstIndex(where: { $0.id == loggedInId }) else {
+            print("❌ Logged in user \(loggedInId) not found in villagers list")
+            print("Available villager IDs: \(villagers.map { $0.id })")
             throw NSError(domain: "VillagePay", code: 2, userInfo: [NSLocalizedDescriptionKey: "Logged in user not found in villagers list"])
         }
+        print("✅ Found user at index: \(index)")
+        
+        // 4. Debug current balance
+        let currentBalance = villagers[index].balanceInRs
+        print("Current balance: \(currentBalance)")
+        print("Adding amount: \(amount)")
         
         // Create balance load transaction
         let balanceLoad = BalanceLoadModel(
@@ -88,6 +106,7 @@ class SharedPrefsHelper {
             balanceInRs: amount,
             txnTimeStamp: Date()
         )
+        print("✅ Created balance load model")
         
         // Create transaction record
         let transaction = TransactionModel(
@@ -96,43 +115,82 @@ class SharedPrefsHelper {
             balanceLoadModel: balanceLoad,
             balanceTransferModel: nil
         )
+        print("✅ Created transaction model")
         
         // Update villager's balance
         let updatedVillager = VillagerModel(
             id: villagers[index].id,
             name: villagers[index].name,
-            balanceInRs: villagers[index].balanceInRs + amount,
+            balanceInRs: currentBalance + amount,
             joinedAt: villagers[index].joinedAt
         )
+        print("New balance will be: \(updatedVillager.balanceInRs)")
         villagers[index] = updatedVillager
         
-        // Get existing transactions
+        // 5. Debug transactions list
         var transactions: [TransactionModel] = []
         if let transactionsJson = userDefaults.stringArray(forKey: SharedPrefsHelper.kTransactionsList) {
+            print("Found existing transactions: \(transactionsJson.count)")
             transactions = transactionsJson.compactMap { jsonString in
-                guard let jsonData = jsonString.data(using: .utf8) else { return nil }
-                return try? JSONDecoder().decode(TransactionModel.self, from: jsonData)
+                guard let jsonData = jsonString.data(using: .utf8) else {
+                    print("❌ Failed to convert transaction string to data")
+                    return nil
+                }
+                do {
+                    let transaction = try JSONDecoder().decode(TransactionModel.self, from: jsonData)
+                    print("✅ Successfully decoded transaction")
+                    return transaction
+                } catch {
+                    print("❌ Failed to decode transaction: \(error)")
+                    return nil
+                }
             }
         }
         
         // Add new transaction
         transactions.append(transaction)
+        print("✅ Added new transaction. Total transactions: \(transactions.count)")
         
-        // Save updated villagers list
-        let villagersJson = villagers.map { villager -> String in
-            let jsonData = try! JSONEncoder().encode(villager)
-            return String(data: jsonData, encoding: .utf8)!
+        // 6. Debug saving villagers list
+        do {
+            let villagersJson = try villagers.map { villager -> String in
+                let jsonData = try JSONEncoder().encode(villager)
+                guard let jsonString = String(data: jsonData, encoding: .utf8) else {
+                    throw NSError(domain: "VillagePay", code: 3, userInfo: [NSLocalizedDescriptionKey: "Failed to encode villager data"])
+                }
+                return jsonString
+            }
+            userDefaults.set(villagersJson, forKey: SharedPrefsHelper.kVillagersList)
+            print("✅ Saved updated villagers list")
+        } catch {
+            print("❌ Failed to save villagers: \(error)")
+            throw error
         }
-        userDefaults.set(villagersJson, forKey: SharedPrefsHelper.kVillagersList)
         
-        // Save updated transactions list
-        let transactionsJson = transactions.map { transaction -> String in
-            let jsonData = try! JSONEncoder().encode(transaction)
-            return String(data: jsonData, encoding: .utf8)!
+        // 7. Debug saving transactions list
+        do {
+            let transactionsJson = try transactions.map { transaction -> String in
+                let jsonData = try JSONEncoder().encode(transaction)
+                guard let jsonString = String(data: jsonData, encoding: .utf8) else {
+                    throw NSError(domain: "VillagePay", code: 4, userInfo: [NSLocalizedDescriptionKey: "Failed to encode transaction data"])
+                }
+                return jsonString
+            }
+            userDefaults.set(transactionsJson, forKey: SharedPrefsHelper.kTransactionsList)
+            print("✅ Saved updated transactions list")
+        } catch {
+            print("❌ Failed to save transactions: \(error)")
+            throw error
         }
-        userDefaults.set(transactionsJson, forKey: SharedPrefsHelper.kTransactionsList)
         
-        // Ensure changes are saved
+        // 8. Verify the save
         userDefaults.synchronize()
+        if let verifyVillager = getLoggedInVillager() {
+            print("✅ Verification: New balance is \(verifyVillager.balanceInRs)")
+        } else {
+            print("❌ Verification failed: Could not read back saved data")
+        }
+        
+        print("=== Load Balance Debug End ===")
     }
 } 

@@ -32,6 +32,10 @@
 	<array>
 		<string>LoadBalanceIntent</string>
 	</array>
+	<key>IntentsSupported</key>
+	<array>
+		<string>LoadBalanceIntent</string>
+	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>
