@@ -20,4 +20,4 @@ struct BalanceWidgetView: View {
 
 #Preview {
     BalanceWidgetView(balance: 500.0)
-} 
+}

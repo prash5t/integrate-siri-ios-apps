@@ -31,10 +31,12 @@
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>LoadBalanceIntent</string>
+		<string>CheckBalanceIntent</string>
 	</array>
 	<key>IntentsSupported</key>
 	<array>
 		<string>LoadBalanceIntent</string>
+		<string>CheckBalanceIntent</string>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

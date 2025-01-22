@@ -7,7 +7,7 @@ class SharedPrefsHelper {
     static let kTransactionsList = "flutter.transactionsList"  // Added new key
     static let shared = SharedPrefsHelper()
     
-    private let userDefaults = UserDefaults(suiteName: "group.com.example.villagePay")!
+    private let userDefaults = UserDefaults.standard
     
     func debugPrintAllUserDefaults() {
         print("==== All UserDefaults ====")
