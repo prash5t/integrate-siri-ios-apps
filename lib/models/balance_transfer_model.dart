@@ -13,12 +13,25 @@ class BalanceTransferModel {
       required this.txnTimeStamp});
 
   factory BalanceTransferModel.fromJson(Map<String, dynamic> json) {
+    DateTime txnTime;
+    try {
+      txnTime = DateTime.tryParse(json['txnTimeStamp']) ?? DateTime.now();
+    } catch (e) {
+      txnTime = DateTime.now();
+    }
+    double amount;
+    try {
+      amount = double.tryParse(json['amount']) ?? 0.0;
+    } catch (e) {
+      amount = (json['amount'] as num).toDouble();
+      // int.tryParse(json['amount'])?.toDouble() ?? 0.0;
+    }
     return BalanceTransferModel(
       id: json['id'],
       fromId: json['fromId'],
       toId: json['toId'],
-      amount: json['amount'],
-      txnTimeStamp: DateTime.tryParse(json['txnTimeStamp']) ?? DateTime.now(),
+      amount: amount,
+      txnTimeStamp: txnTime,
     );
   }
 
@@ -28,7 +41,7 @@ class BalanceTransferModel {
       'fromId': fromId,
       'toId': toId,
       'amount': amount,
-      'txnTimeStamp': txnTimeStamp.toString(),
+      'txnTimeStamp': txnTimeStamp.toIso8601String(),
     };
   }
 }

@@ -4,7 +4,7 @@ import SwiftUI
 struct LoadBalanceIntent: AppIntent {
     static var title: LocalizedStringResource = "Load balance"
     static var description = IntentDescription("Load balance in your village pay account")
-    static var openAppWhenRun: Bool = true
+    static var openAppWhenRun: Bool = false
     let appName: String = "Village Pay"
     
     @Parameter(title: "Amount", description: "Amount to load in NPR", inclusiveRange: (1,1000))

@@ -4,7 +4,7 @@ import SwiftUI
 struct CheckBalanceIntent: AppIntent {
     static var title: LocalizedStringResource = "Check balance"
     static var description = IntentDescription("Check balance in your village pay account")
-    static var openAppWhenRun: Bool = true
+    static var openAppWhenRun: Bool = false
     let appName: String = "Village Pay"
     
     @MainActor

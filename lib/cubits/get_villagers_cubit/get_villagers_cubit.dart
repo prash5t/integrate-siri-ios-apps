@@ -31,13 +31,13 @@ class GetVillagersCubit extends Cubit<GetVillagersState> {
         }
         List<VillagerModel> updatedVillagers = villagersList;
         villagers.value = updatedVillagers;
-        emit(VillagersLoadedState(updatedVillagers));
+        emit(VillagersLoadedState(updatedVillagers, null));
       } catch (e) {
-        emit(VillagersLoadedState([]));
+        emit(VillagersLoadedState([], e.toString()));
       }
     } else {
       villagers.value = [];
-      emit(VillagersLoadedState([]));
+      emit(VillagersLoadedState([], null));
     }
   }
 }

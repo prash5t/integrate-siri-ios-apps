@@ -6,6 +6,7 @@ class VillagersLoadingState extends GetVillagersState {}
 
 class VillagersLoadedState extends GetVillagersState {
   final List<VillagerModel> villagers;
+  final String? errorMessage;
 
-  VillagersLoadedState(this.villagers);
+  VillagersLoadedState(this.villagers, this.errorMessage);
 }
