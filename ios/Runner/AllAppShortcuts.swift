@@ -22,6 +22,14 @@ struct AllAppShortcuts: AppShortcutsProvider {
                     "Add money to \(.applicationName)",
                 ],
                 systemImageName: "plus.circle.fill"
+            ),
+            AppShortcut(
+                intent: CheckStockPriceIntent(),
+                phrases: [
+                    "Check stock price in \(.applicationName)",
+                    "Check nepse in \(.applicationName)",
+                    "Check company price in \(.applicationName)"
+                ]
             )
         ]
     }

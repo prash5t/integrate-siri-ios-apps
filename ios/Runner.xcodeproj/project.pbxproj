@@ -11,6 +11,15 @@
 		1DC666320BBFC7FC75E3A94F /* Pods_RunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B38418F7CD73040738C45FA5 /* Pods_RunnerTests.framework */; };
 		270A3B3B2D3BECAB007D0D59 /* VillagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A3B3A2D3BECAB007D0D59 /* VillagerModel.swift */; };
 		270A3B3F2D3E0EDC007D0D59 /* BalanceLoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A3B3D2D3E0EDC007D0D59 /* BalanceLoadedView.swift */; };
+		274B9D612D59B80600D7819A /* StockPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D602D59B80600D7819A /* StockPriceView.swift */; };
+		274B9D672D59BA3700D7819A /* NepseLatestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D622D59BA3700D7819A /* NepseLatestDataModel.swift */; };
+		274B9D682D59BA3700D7819A /* CompanyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D632D59BA3700D7819A /* CompanyDataModel.swift */; };
+		274B9D692D59BA3700D7819A /* PriceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D642D59BA3700D7819A /* PriceModel.swift */; };
+		274B9D6A2D59BA3700D7819A /* MetaDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D652D59BA3700D7819A /* MetaDataModel.swift */; };
+		274B9D6B2D59BA3700D7819A /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D662D59BA3700D7819A /* CompanyModel.swift */; };
+		274B9D6E2D59BA7100D7819A /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D6D2D59BA7100D7819A /* ApiConstants.swift */; };
+		274B9D712D59BB7000D7819A /* NepseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D702D59BB7000D7819A /* NepseRepository.swift */; };
+		274B9D732D59BEE000D7819A /* CheckStockPriceIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D722D59BEE000D7819A /* CheckStockPriceIntent.swift */; };
 		275F8C202D3922E600B4F177 /* OpenProfileIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C1F2D3922E600B4F177 /* OpenProfileIntent.swift */; };
 		275F8C222D3925B400B4F177 /* AllAppShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C212D3925B400B4F177 /* AllAppShortcuts.swift */; };
 		275F8C242D39281D00B4F177 /* CheckBalanceIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C232D39281D00B4F177 /* CheckBalanceIntent.swift */; };
@@ -103,6 +112,15 @@
 		16BC2BC869A12F8D44AA76FE /* Pods-RunnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		270A3B3A2D3BECAB007D0D59 /* VillagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerModel.swift; sourceTree = "<group>"; };
 		270A3B3D2D3E0EDC007D0D59 /* BalanceLoadedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceLoadedView.swift; sourceTree = "<group>"; };
+		274B9D602D59B80600D7819A /* StockPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceView.swift; sourceTree = "<group>"; };
+		274B9D622D59BA3700D7819A /* NepseLatestDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NepseLatestDataModel.swift; sourceTree = "<group>"; };
+		274B9D632D59BA3700D7819A /* CompanyDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyDataModel.swift; sourceTree = "<group>"; };
+		274B9D642D59BA3700D7819A /* PriceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceModel.swift; sourceTree = "<group>"; };
+		274B9D652D59BA3700D7819A /* MetaDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataModel.swift; sourceTree = "<group>"; };
+		274B9D662D59BA3700D7819A /* CompanyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
+		274B9D6D2D59BA7100D7819A /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		274B9D702D59BB7000D7819A /* NepseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NepseRepository.swift; sourceTree = "<group>"; };
+		274B9D722D59BEE000D7819A /* CheckStockPriceIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStockPriceIntent.swift; sourceTree = "<group>"; };
 		275F8C1F2D3922E600B4F177 /* OpenProfileIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenProfileIntent.swift; sourceTree = "<group>"; };
 		275F8C212D3925B400B4F177 /* AllAppShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAppShortcuts.swift; sourceTree = "<group>"; };
 		275F8C232D39281D00B4F177 /* CheckBalanceIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBalanceIntent.swift; sourceTree = "<group>"; };
@@ -176,6 +194,11 @@
 		270A3B392D3BEC87007D0D59 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				274B9D632D59BA3700D7819A /* CompanyDataModel.swift */,
+				274B9D662D59BA3700D7819A /* CompanyModel.swift */,
+				274B9D652D59BA3700D7819A /* MetaDataModel.swift */,
+				274B9D622D59BA3700D7819A /* NepseLatestDataModel.swift */,
+				274B9D642D59BA3700D7819A /* PriceModel.swift */,
 				276EFF162D3FA51B00D7EC62 /* BalanceLoadModel.swift */,
 				276EFF172D3FA51B00D7EC62 /* BalanceTransferModel.swift */,
 				276EFF152D3FA51B00D7EC62 /* TransactionModel.swift */,
@@ -185,11 +208,28 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		274B9D6C2D59BA5D00D7819A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				274B9D6D2D59BA7100D7819A /* ApiConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		274B9D6F2D59BB2100D7819A /* DataRepository */ = {
+			isa = PBXGroup;
+			children = (
+				274B9D702D59BB7000D7819A /* NepseRepository.swift */,
+			);
+			path = DataRepository;
+			sourceTree = "<group>";
+		};
 		275F8C272D39512100B4F177 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				275F8C2A2D395D5E00B4F177 /* BalanceWidgetView.swift */,
 				270A3B3D2D3E0EDC007D0D59 /* BalanceLoadedView.swift */,
+				274B9D602D59B80600D7819A /* StockPriceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +325,8 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				274B9D6F2D59BB2100D7819A /* DataRepository */,
+				274B9D6C2D59BA5D00D7819A /* Constants */,
 				270A3B392D3BEC87007D0D59 /* Models */,
 				275F8C2C2D3968AE00B4F177 /* SharedPrefsHelper.swift */,
 				275F8C272D39512100B4F177 /* Views */,
@@ -301,6 +343,7 @@
 				275F8C212D3925B400B4F177 /* AllAppShortcuts.swift */,
 				275F8C232D39281D00B4F177 /* CheckBalanceIntent.swift */,
 				276EFF552D40BC2800D7EC62 /* LoadBalanceIntent.swift */,
+				274B9D722D59BEE000D7819A /* CheckStockPriceIntent.swift */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -563,17 +606,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				276EFF192D3FA51B00D7EC62 /* TransactionModel.swift in Sources */,
+				274B9D6A2D59BA3700D7819A /* MetaDataModel.swift in Sources */,
 				270A3B3F2D3E0EDC007D0D59 /* BalanceLoadedView.swift in Sources */,
+				274B9D732D59BEE000D7819A /* CheckStockPriceIntent.swift in Sources */,
 				275F8C2D2D3968AE00B4F177 /* SharedPrefsHelper.swift in Sources */,
 				275F8C2B2D395D5E00B4F177 /* BalanceWidgetView.swift in Sources */,
 				275F8C202D3922E600B4F177 /* OpenProfileIntent.swift in Sources */,
+				274B9D682D59BA3700D7819A /* CompanyDataModel.swift in Sources */,
 				275F8C222D3925B400B4F177 /* AllAppShortcuts.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
+				274B9D6B2D59BA3700D7819A /* CompanyModel.swift in Sources */,
 				270A3B3B2D3BECAB007D0D59 /* VillagerModel.swift in Sources */,
+				274B9D672D59BA3700D7819A /* NepseLatestDataModel.swift in Sources */,
 				275F8C242D39281D00B4F177 /* CheckBalanceIntent.swift in Sources */,
+				274B9D692D59BA3700D7819A /* PriceModel.swift in Sources */,
+				274B9D6E2D59BA7100D7819A /* ApiConstants.swift in Sources */,
 				276EFF1A2D3FA51B00D7EC62 /* BalanceLoadModel.swift in Sources */,
 				276EFF562D40BC2800D7EC62 /* LoadBalanceIntent.swift in Sources */,
+				274B9D712D59BB7000D7819A /* NepseRepository.swift in Sources */,
 				276EFF182D3FA51B00D7EC62 /* TransactionType.swift in Sources */,
+				274B9D612D59B80600D7819A /* StockPriceView.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				276EFF1B2D3FA51B00D7EC62 /* BalanceTransferModel.swift in Sources */,
 			);
