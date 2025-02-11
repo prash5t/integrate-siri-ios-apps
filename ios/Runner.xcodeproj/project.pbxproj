@@ -23,12 +23,9 @@
 		274B9DCD2D5B2D4C00D7819A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274B9DCC2D5B2D4C00D7819A /* WidgetKit.framework */; };
 		274B9DCF2D5B2D4C00D7819A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274B9DCE2D5B2D4C00D7819A /* SwiftUI.framework */; };
 		274B9DD22D5B2D4C00D7819A /* ProfileWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9DD12D5B2D4C00D7819A /* ProfileWidgetBundle.swift */; };
-		274B9DD42D5B2D4C00D7819A /* ProfileWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9DD32D5B2D4C00D7819A /* ProfileWidgetLiveActivity.swift */; };
-		274B9DD62D5B2D4C00D7819A /* ProfileWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9DD52D5B2D4C00D7819A /* ProfileWidget.swift */; };
 		274B9DD82D5B2D4C00D7819A /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9DD72D5B2D4C00D7819A /* AppIntent.swift */; };
 		274B9DDA2D5B2D4F00D7819A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274B9DD92D5B2D4F00D7819A /* Assets.xcassets */; };
 		274B9DDE2D5B2D4F00D7819A /* ProfileWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 274B9DCB2D5B2D4C00D7819A /* ProfileWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		274B9DE32D5B2D8F00D7819A /* SharedPrefsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C2C2D3968AE00B4F177 /* SharedPrefsHelper.swift */; };
 		274B9DE42D5B376700D7819A /* VillagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A3B3A2D3BECAB007D0D59 /* VillagerModel.swift */; };
 		274B9DE52D5B376900D7819A /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276EFF142D3FA51B00D7EC62 /* TransactionType.swift */; };
 		274B9DE62D5B376B00D7819A /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276EFF152D3FA51B00D7EC62 /* TransactionModel.swift */; };
@@ -39,12 +36,9 @@
 		274B9DEB2D5B377800D7819A /* MetaDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D652D59BA3700D7819A /* MetaDataModel.swift */; };
 		274B9DEC2D5B377B00D7819A /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D662D59BA3700D7819A /* CompanyModel.swift */; };
 		274B9DED2D5B377E00D7819A /* CompanyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D632D59BA3700D7819A /* CompanyDataModel.swift */; };
-		274B9DEF2D5B3CCB00D7819A /* NepseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D702D59BB7000D7819A /* NepseRepository.swift */; };
-		274B9DF02D5B3CD100D7819A /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D6D2D59BA7100D7819A /* ApiConstants.swift */; };
 		274B9DF12D5B3CD800D7819A /* StockPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D602D59B80600D7819A /* StockPriceView.swift */; };
 		274B9DF22D5B3CDA00D7819A /* BalanceLoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A3B3D2D3E0EDC007D0D59 /* BalanceLoadedView.swift */; };
 		274B9DF32D5B3CDC00D7819A /* BalanceWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C2A2D395D5E00B4F177 /* BalanceWidgetView.swift */; };
-		274B9DF42D5B3E2F00D7819A /* CheckStockPriceIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9D722D59BEE000D7819A /* CheckStockPriceIntent.swift */; };
 		274B9DFA2D5B3F7200D7819A /* StockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9DF92D5B3F6E00D7819A /* StockWidget.swift */; };
 		275F8C202D3922E600B4F177 /* OpenProfileIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C1F2D3922E600B4F177 /* OpenProfileIntent.swift */; };
 		275F8C222D3925B400B4F177 /* AllAppShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C212D3925B400B4F177 /* AllAppShortcuts.swift */; };
@@ -159,8 +153,6 @@
 		274B9DCC2D5B2D4C00D7819A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		274B9DCE2D5B2D4C00D7819A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		274B9DD12D5B2D4C00D7819A /* ProfileWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWidgetBundle.swift; sourceTree = "<group>"; };
-		274B9DD32D5B2D4C00D7819A /* ProfileWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWidgetLiveActivity.swift; sourceTree = "<group>"; };
-		274B9DD52D5B2D4C00D7819A /* ProfileWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWidget.swift; sourceTree = "<group>"; };
 		274B9DD72D5B2D4C00D7819A /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		274B9DD92D5B2D4F00D7819A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		274B9DDB2D5B2D4F00D7819A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -283,8 +275,6 @@
 			children = (
 				274B9DF92D5B3F6E00D7819A /* StockWidget.swift */,
 				274B9DD12D5B2D4C00D7819A /* ProfileWidgetBundle.swift */,
-				274B9DD32D5B2D4C00D7819A /* ProfileWidgetLiveActivity.swift */,
-				274B9DD52D5B2D4C00D7819A /* ProfileWidget.swift */,
 				274B9DD72D5B2D4C00D7819A /* AppIntent.swift */,
 				274B9DD92D5B2D4F00D7819A /* Assets.xcassets */,
 				274B9DDB2D5B2D4F00D7819A /* Info.plist */,
@@ -693,20 +683,14 @@
 				274B9DE72D5B376E00D7819A /* BalanceTransferModel.swift in Sources */,
 				274B9DE62D5B376B00D7819A /* TransactionModel.swift in Sources */,
 				274B9DFA2D5B3F7200D7819A /* StockWidget.swift in Sources */,
-				274B9DF42D5B3E2F00D7819A /* CheckStockPriceIntent.swift in Sources */,
 				274B9DE82D5B377100D7819A /* BalanceLoadModel.swift in Sources */,
 				274B9DEC2D5B377B00D7819A /* CompanyModel.swift in Sources */,
-				274B9DF02D5B3CD100D7819A /* ApiConstants.swift in Sources */,
 				274B9DED2D5B377E00D7819A /* CompanyDataModel.swift in Sources */,
-				274B9DD62D5B2D4C00D7819A /* ProfileWidget.swift in Sources */,
 				274B9DE92D5B377300D7819A /* PriceModel.swift in Sources */,
 				274B9DD82D5B2D4C00D7819A /* AppIntent.swift in Sources */,
 				274B9DF12D5B3CD800D7819A /* StockPriceView.swift in Sources */,
-				274B9DE32D5B2D8F00D7819A /* SharedPrefsHelper.swift in Sources */,
 				274B9DEB2D5B377800D7819A /* MetaDataModel.swift in Sources */,
-				274B9DD42D5B2D4C00D7819A /* ProfileWidgetLiveActivity.swift in Sources */,
 				274B9DF22D5B3CDA00D7819A /* BalanceLoadedView.swift in Sources */,
-				274B9DEF2D5B3CCB00D7819A /* NepseRepository.swift in Sources */,
 				274B9DF32D5B3CDC00D7819A /* BalanceWidgetView.swift in Sources */,
 				274B9DEA2D5B377600D7819A /* NepseLatestDataModel.swift in Sources */,
 				274B9DD22D5B2D4C00D7819A /* ProfileWidgetBundle.swift in Sources */,

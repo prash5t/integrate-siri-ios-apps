@@ -47,7 +47,20 @@ struct StockWidgetProvider: TimelineProvider {
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<StockEntry>) -> ()) {
         print("Fetching last saved stock")
-        let stock = SharedPrefsHelper.shared.getLastViewedStock()
+        let stock = CompanyDataModel(
+            company: CompanyModel(code: "NABIL", name: "Nabil Bank Limited"),
+            price: PriceModel(
+                open: 1000.0,
+                max: 1020.0,
+                min: 995.0,
+                close: 1015.0,
+                prevClose: 1005.0,
+                diff: 10.0
+            ),
+            numTrans: 500,
+            tradedShares: 10000,
+            amount: 10150000.0
+        )
         let entry = StockEntry(date: Date(), companyData: stock)
         
         // Create multiple entries for more frequent updates
