@@ -1,10 +1,12 @@
 import Foundation
+import WidgetKit
 
 class SharedPrefsHelper {
     // Match exact keys from SharedPrefsConstants.dart
     static let kLoggedInVillagerId = "flutter.loggedInVillagerId"  // Changed to static
     static let kVillagersList = "flutter.villagersList"  // Changed to static
     static let kTransactionsList = "flutter.transactionsList"  // Added new key
+    static let kLastViewedStock = "flutter.lastViewedStock"  // Add this line
     static let shared = SharedPrefsHelper()
     
     private let userDefaults = UserDefaults.standard
@@ -197,5 +199,45 @@ class SharedPrefsHelper {
         }
         
         print("=== Load Balance Debug End ===")
+    }
+    
+    func saveLastViewedStock(companyData: CompanyDataModel) {
+        do {
+            let encoder = JSONEncoder()
+            let jsonData = try encoder.encode(companyData)
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                userDefaults.set(jsonString, forKey: SharedPrefsHelper.kLastViewedStock)
+                userDefaults.synchronize()
+                print("✅ Saved last viewed stock: \(companyData.company.name)")
+                
+                // verify saved stock
+                if let savedStock: CompanyDataModel = getLastViewedStock() {
+                    print("Saved last stock: \(savedStock.company.name)")
+                }
+                
+                // Trigger widget reload
+                WidgetCenter.shared.reloadTimelines(ofKind: "StockWidget")
+            }
+        } catch {
+            print("❌ Failed to save last viewed stock: \(error)")
+        }
+    }
+    
+    func getLastViewedStock() -> CompanyDataModel? {
+        
+        guard let jsonString = userDefaults.string(forKey: SharedPrefsHelper.kLastViewedStock),
+              let jsonData = jsonString.data(using: .utf8) else {
+            print("Last Viewed Stock Not Found")
+            return nil
+        }
+        
+        do {
+            let companyData = try JSONDecoder().decode(CompanyDataModel.self, from: jsonData)
+            print("Last Viewed Stock: \(companyData.company.name)")
+            return companyData
+        } catch {
+            print("❌ Failed to decode last viewed stock: \(error)")
+            return nil
+        }
     }
 } 

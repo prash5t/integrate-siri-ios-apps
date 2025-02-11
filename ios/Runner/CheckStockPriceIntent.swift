@@ -1,5 +1,6 @@
 import AppIntents
 import SwiftUI
+import WidgetKit
 
 struct CheckStockPriceIntent: AppIntent {
     static var title: LocalizedStringResource = "Check Stock Price"
@@ -43,6 +44,12 @@ struct CheckStockPriceIntent: AppIntent {
             }
             
             print("✅ Found company data for: \(companyData.company.name)")
+            
+            // Save the last viewed stock and force widget update
+            SharedPrefsHelper.shared.saveLastViewedStock(companyData: companyData)
+            
+            // Force immediate widget update
+            WidgetCenter.shared.reloadTimelines(ofKind: "StockWidget")
             
             // Create success dialog
             let successMsg: LocalizedStringResource = "\(companyData.company.name) opened at Rs. \(String(format: "%.2f", companyData.price.open)), closed at Rs. \(String(format: "%.2f", companyData.price.close)). The day's high was Rs. \(String(format: "%.2f", companyData.price.max)) and low was Rs. \(String(format: "%.2f", companyData.price.min))"
