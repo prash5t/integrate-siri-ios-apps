@@ -111,8 +111,8 @@ struct TradingInfoRow: View {
     // Sample data for preview
     let sampleCompanyData = CompanyDataModel(
         company: CompanyModel(
-            code: "NABIL",
-            name: "Nabil Bank Limited"
+            code: "VILA",
+            name: "Village Bank Limited"
         ),
         price: PriceModel(
             open: 495.0,

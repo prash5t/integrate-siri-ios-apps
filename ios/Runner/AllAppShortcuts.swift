@@ -27,6 +27,8 @@ struct AllAppShortcuts: AppShortcutsProvider {
                 intent: CheckStockPriceIntent(),
                 phrases: [
                     "Check stock price in \(.applicationName)",
+                    "Check stock price of \(\.$company)",
+                    "Check stock price of \(\.$company) in \(.applicationName)",
                     "Check nepse in \(.applicationName)",
                     "Check company price in \(.applicationName)"
                 ]

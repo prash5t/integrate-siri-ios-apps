@@ -66,6 +66,6 @@ struct CheckStockPriceIntent: AppIntent {
 
 extension CheckStockPriceIntent {
     static var parameterSummary: some ParameterSummary {
-        Summary("Check stock price of companies listed in NEPSE")
+        Summary("Check stock price of \(\.$company)")
     }
 }
