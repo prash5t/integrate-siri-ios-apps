@@ -7,6 +7,7 @@ class SharedPrefsHelper {
     static let kVillagersList = "flutter.villagersList"  // Changed to static
     static let kTransactionsList = "flutter.transactionsList"  // Added new key
     static let kLastViewedStock = "flutter.lastViewedStock"  // Add this line
+    static let kVoiceConversationHistory = "flutter.voiceConversationHistory"
     static let shared = SharedPrefsHelper()
     
     private let userDefaults = UserDefaults.standard
@@ -239,5 +240,41 @@ class SharedPrefsHelper {
             print("❌ Failed to decode last viewed stock: \(error)")
             return nil
         }
+    }
+    
+    func saveVoiceConversation(messages: [VoiceMessageModel]) {
+        do {
+            let encoder = JSONEncoder()
+            let jsonData = try encoder.encode(messages)
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                userDefaults.set(jsonString, forKey: SharedPrefsHelper.kVoiceConversationHistory)
+                userDefaults.synchronize()
+                print("✅ Saved voice conversation with \(messages.count) messages")
+            }
+        } catch {
+            print("❌ Failed to save voice conversation: \(error)")
+        }
+    }
+    
+    func getVoiceConversation() -> [VoiceMessageModel] {
+        guard let jsonString = userDefaults.string(forKey: SharedPrefsHelper.kVoiceConversationHistory),
+              let jsonData = jsonString.data(using: .utf8) else {
+            return []
+        }
+        
+        do {
+            let messages = try JSONDecoder().decode([VoiceMessageModel].self, from: jsonData)
+            print("📱 Loaded voice conversation with \(messages.count) messages")
+            return messages
+        } catch {
+            print("❌ Failed to decode voice conversation: \(error)")
+            return []
+        }
+    }
+    
+    func clearVoiceConversation() {
+        userDefaults.removeObject(forKey: SharedPrefsHelper.kVoiceConversationHistory)
+        userDefaults.synchronize()
+        print("🗑️ Cleared voice conversation history")
     }
 } 

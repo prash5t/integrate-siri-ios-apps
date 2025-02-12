@@ -44,6 +44,7 @@
 		274B9E042D5C784900D7819A /* VoiceAssistantResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9E032D5C784900D7819A /* VoiceAssistantResponseModel.swift */; };
 		274B9E062D5C799D00D7819A /* VoiceMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9E052D5C799D00D7819A /* VoiceMessageModel.swift */; };
 		274B9E082D5C7A0E00D7819A /* VoiceAssistantPayloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9E072D5C7A0E00D7819A /* VoiceAssistantPayloadModel.swift */; };
+		274B9E0A2D5C7DBB00D7819A /* TalkToVillagerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9E092D5C7DBB00D7819A /* TalkToVillagerIntent.swift */; };
 		275F8C202D3922E600B4F177 /* OpenProfileIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C1F2D3922E600B4F177 /* OpenProfileIntent.swift */; };
 		275F8C222D3925B400B4F177 /* AllAppShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C212D3925B400B4F177 /* AllAppShortcuts.swift */; };
 		275F8C242D39281D00B4F177 /* CheckBalanceIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C232D39281D00B4F177 /* CheckBalanceIntent.swift */; };
@@ -166,6 +167,7 @@
 		274B9E032D5C784900D7819A /* VoiceAssistantResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAssistantResponseModel.swift; sourceTree = "<group>"; };
 		274B9E052D5C799D00D7819A /* VoiceMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessageModel.swift; sourceTree = "<group>"; };
 		274B9E072D5C7A0E00D7819A /* VoiceAssistantPayloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAssistantPayloadModel.swift; sourceTree = "<group>"; };
+		274B9E092D5C7DBB00D7819A /* TalkToVillagerIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkToVillagerIntent.swift; sourceTree = "<group>"; };
 		275F8C1F2D3922E600B4F177 /* OpenProfileIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenProfileIntent.swift; sourceTree = "<group>"; };
 		275F8C212D3925B400B4F177 /* AllAppShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAppShortcuts.swift; sourceTree = "<group>"; };
 		275F8C232D39281D00B4F177 /* CheckBalanceIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBalanceIntent.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				275F8C232D39281D00B4F177 /* CheckBalanceIntent.swift */,
 				276EFF552D40BC2800D7EC62 /* LoadBalanceIntent.swift */,
 				274B9D722D59BEE000D7819A /* CheckStockPriceIntent.swift */,
+				274B9E092D5C7DBB00D7819A /* TalkToVillagerIntent.swift */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				270A3B3B2D3BECAB007D0D59 /* VillagerModel.swift in Sources */,
 				274B9D672D59BA3700D7819A /* NepseLatestDataModel.swift in Sources */,
 				274B9E082D5C7A0E00D7819A /* VoiceAssistantPayloadModel.swift in Sources */,
+				274B9E0A2D5C7DBB00D7819A /* TalkToVillagerIntent.swift in Sources */,
 				275F8C242D39281D00B4F177 /* CheckBalanceIntent.swift in Sources */,
 				274B9D692D59BA3700D7819A /* PriceModel.swift in Sources */,
 				274B9D6E2D59BA7100D7819A /* ApiConstants.swift in Sources */,

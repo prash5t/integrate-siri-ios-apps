@@ -4,6 +4,15 @@ struct AllAppShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         return [
             AppShortcut(
+                intent: TalkToVillagerIntent(),
+                phrases: [
+                    "Talk to villager in \(.applicationName)",
+                    "Call villager in \(.applicationName)",
+                    "Open villager in \(.applicationName)",
+                    "Open \(.applicationName)",
+                ]
+            ),
+            AppShortcut(
                 intent: CheckBalanceIntent(),
                 phrases: [
                     "Check my balance in \(.applicationName)",
