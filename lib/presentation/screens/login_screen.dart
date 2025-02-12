@@ -45,11 +45,11 @@ class _LoginScreenState extends State<LoginScreen> {
           showCupertinoDialog(
             context: context,
             builder: (context) => CupertinoAlertDialog(
-              title: Text(TextConstants.error),
+              title: const Text(TextConstants.error),
               content: Text(state.errorMessage),
               actions: [
                 CupertinoDialogAction(
-                  child: Text(TextConstants.ok),
+                  child: const Text(TextConstants.ok),
                   onPressed: () => Navigator.pop(context),
                 ),
               ],
@@ -62,9 +62,9 @@ class _LoginScreenState extends State<LoginScreen> {
           return CupertinoPageScaffold(
             backgroundColor: ColorConstants.backgroundColor(context),
             navigationBar: CupertinoNavigationBar(
-              middle: Text(
+              middle: const Text(
                 TextConstants.login,
-                style: const TextStyle(fontWeight: FontWeight.w600),
+                style: TextStyle(fontWeight: FontWeight.w600),
               ),
               backgroundColor:
                   ColorConstants.surfaceColor(context).withOpacity(0.8),

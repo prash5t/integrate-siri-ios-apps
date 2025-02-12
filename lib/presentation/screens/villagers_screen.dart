@@ -79,6 +79,14 @@ class _VillagersScreenState extends State<VillagersScreen> {
                               ),
                               textAlign: TextAlign.center,
                             ),
+                            if (state.errorMessage != null)
+                              Text(
+                                state.errorMessage!,
+                                style: TextStyle(
+                                  color: ColorConstants.textSecondary(context),
+                                  fontSize: 13,
+                                ),
+                              ),
                           ],
                         ),
                       ),

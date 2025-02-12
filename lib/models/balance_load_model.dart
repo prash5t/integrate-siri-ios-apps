@@ -11,11 +11,24 @@ class BalanceLoadModel {
       required this.txnTimeStamp});
 
   factory BalanceLoadModel.fromJson(Map<String, dynamic> json) {
+    DateTime txnTime;
+    try {
+      txnTime = DateTime.tryParse(json['txnTimeStamp']) ?? DateTime.now();
+    } catch (e) {
+      txnTime = DateTime.now();
+    }
+    double balanceInRs;
+    try {
+      balanceInRs = double.tryParse(json['balanceInRs']) ?? 0.0;
+    } catch (e) {
+      balanceInRs = (json['balanceInRs'] as num).toDouble();
+      // int.tryParse(json['balanceInRs'])?.toDouble() ?? 0.0;
+    }
     return BalanceLoadModel(
       id: json['id'],
       villagerId: json['villagerId'],
-      balanceInRs: json['balanceInRs'],
-      txnTimeStamp: DateTime.tryParse(json['txnTimeStamp']) ?? DateTime.now(),
+      balanceInRs: balanceInRs,
+      txnTimeStamp: txnTime,
     );
   }
 
@@ -24,7 +37,7 @@ class BalanceLoadModel {
       'id': id,
       'villagerId': villagerId,
       'balanceInRs': balanceInRs,
-      'txnTimeStamp': txnTimeStamp.toString(),
+      'txnTimeStamp': txnTimeStamp.toIso8601String(),
     };
   }
 }
