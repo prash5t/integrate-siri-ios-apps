@@ -40,6 +40,10 @@
 		274B9DF22D5B3CDA00D7819A /* BalanceLoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A3B3D2D3E0EDC007D0D59 /* BalanceLoadedView.swift */; };
 		274B9DF32D5B3CDC00D7819A /* BalanceWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C2A2D395D5E00B4F177 /* BalanceWidgetView.swift */; };
 		274B9DFA2D5B3F7200D7819A /* StockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9DF92D5B3F6E00D7819A /* StockWidget.swift */; };
+		274B9E022D5C77A000D7819A /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9E012D5C77A000D7819A /* DataRepository.swift */; };
+		274B9E042D5C784900D7819A /* VoiceAssistantResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9E032D5C784900D7819A /* VoiceAssistantResponseModel.swift */; };
+		274B9E062D5C799D00D7819A /* VoiceMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9E052D5C799D00D7819A /* VoiceMessageModel.swift */; };
+		274B9E082D5C7A0E00D7819A /* VoiceAssistantPayloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9E072D5C7A0E00D7819A /* VoiceAssistantPayloadModel.swift */; };
 		275F8C202D3922E600B4F177 /* OpenProfileIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C1F2D3922E600B4F177 /* OpenProfileIntent.swift */; };
 		275F8C222D3925B400B4F177 /* AllAppShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C212D3925B400B4F177 /* AllAppShortcuts.swift */; };
 		275F8C242D39281D00B4F177 /* CheckBalanceIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F8C232D39281D00B4F177 /* CheckBalanceIntent.swift */; };
@@ -158,6 +162,10 @@
 		274B9DDB2D5B2D4F00D7819A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		274B9DEE2D5B395B00D7819A /* ProfileWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProfileWidgetExtension.entitlements; sourceTree = "<group>"; };
 		274B9DF92D5B3F6E00D7819A /* StockWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockWidget.swift; sourceTree = "<group>"; };
+		274B9E012D5C77A000D7819A /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		274B9E032D5C784900D7819A /* VoiceAssistantResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAssistantResponseModel.swift; sourceTree = "<group>"; };
+		274B9E052D5C799D00D7819A /* VoiceMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessageModel.swift; sourceTree = "<group>"; };
+		274B9E072D5C7A0E00D7819A /* VoiceAssistantPayloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAssistantPayloadModel.swift; sourceTree = "<group>"; };
 		275F8C1F2D3922E600B4F177 /* OpenProfileIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenProfileIntent.swift; sourceTree = "<group>"; };
 		275F8C212D3925B400B4F177 /* AllAppShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAppShortcuts.swift; sourceTree = "<group>"; };
 		275F8C232D39281D00B4F177 /* CheckBalanceIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBalanceIntent.swift; sourceTree = "<group>"; };
@@ -250,6 +258,9 @@
 				276EFF152D3FA51B00D7EC62 /* TransactionModel.swift */,
 				276EFF142D3FA51B00D7EC62 /* TransactionType.swift */,
 				270A3B3A2D3BECAB007D0D59 /* VillagerModel.swift */,
+				274B9E032D5C784900D7819A /* VoiceAssistantResponseModel.swift */,
+				274B9E052D5C799D00D7819A /* VoiceMessageModel.swift */,
+				274B9E072D5C7A0E00D7819A /* VoiceAssistantPayloadModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				274B9D702D59BB7000D7819A /* NepseRepository.swift */,
+				274B9E012D5C77A000D7819A /* DataRepository.swift */,
 			);
 			path = DataRepository;
 			sourceTree = "<group>";
@@ -724,21 +736,25 @@
 				276EFF192D3FA51B00D7EC62 /* TransactionModel.swift in Sources */,
 				274B9D6A2D59BA3700D7819A /* MetaDataModel.swift in Sources */,
 				270A3B3F2D3E0EDC007D0D59 /* BalanceLoadedView.swift in Sources */,
+				274B9E042D5C784900D7819A /* VoiceAssistantResponseModel.swift in Sources */,
 				274B9D732D59BEE000D7819A /* CheckStockPriceIntent.swift in Sources */,
 				275F8C2D2D3968AE00B4F177 /* SharedPrefsHelper.swift in Sources */,
 				275F8C2B2D395D5E00B4F177 /* BalanceWidgetView.swift in Sources */,
 				275F8C202D3922E600B4F177 /* OpenProfileIntent.swift in Sources */,
 				274B9D682D59BA3700D7819A /* CompanyDataModel.swift in Sources */,
 				275F8C222D3925B400B4F177 /* AllAppShortcuts.swift in Sources */,
+				274B9E022D5C77A000D7819A /* DataRepository.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				274B9D6B2D59BA3700D7819A /* CompanyModel.swift in Sources */,
 				270A3B3B2D3BECAB007D0D59 /* VillagerModel.swift in Sources */,
 				274B9D672D59BA3700D7819A /* NepseLatestDataModel.swift in Sources */,
+				274B9E082D5C7A0E00D7819A /* VoiceAssistantPayloadModel.swift in Sources */,
 				275F8C242D39281D00B4F177 /* CheckBalanceIntent.swift in Sources */,
 				274B9D692D59BA3700D7819A /* PriceModel.swift in Sources */,
 				274B9D6E2D59BA7100D7819A /* ApiConstants.swift in Sources */,
 				276EFF1A2D3FA51B00D7EC62 /* BalanceLoadModel.swift in Sources */,
 				276EFF562D40BC2800D7EC62 /* LoadBalanceIntent.swift in Sources */,
+				274B9E062D5C799D00D7819A /* VoiceMessageModel.swift in Sources */,
 				274B9D712D59BB7000D7819A /* NepseRepository.swift in Sources */,
 				276EFF182D3FA51B00D7EC62 /* TransactionType.swift in Sources */,
 				274B9D612D59B80600D7819A /* StockPriceView.swift in Sources */,
